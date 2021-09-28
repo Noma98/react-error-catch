@@ -1,4 +1,5 @@
 import React from 'react';
+import ErrorBoundary from './ErrorBoundary';
 import User from './User';
 
 function App() {
@@ -6,7 +7,11 @@ function App() {
     id: 1,
     username: 'noma'
   };
-  return <User user={user} />;
+  return (
+    <ErrorBoundary>
+      <User />
+    </ErrorBoundary>
+  )
 }
 
 export default App;
